@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 class LoginPage extends Component {
   constructor(props) {
