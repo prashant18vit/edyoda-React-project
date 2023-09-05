@@ -6,17 +6,17 @@ class OrderListingPage extends Component {
     super(props);
     this.state = {
       orders: [],
-      selectedStatus: 'All', // Initial filter status
+      selectedStatus: 'All', 
     };
   }
 
   componentDidMount() {
-    // Make an API call to fetch orders on page load
+  
     this.fetchOrders();
   }
 
   fetchOrders() {
-    // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint
+  
     fetch('https://5fc1a1c9cb4d020016fe6b07.mockapi.io/api/v1/orders')
       .then((response) => response.json())
       .then((data) => {
@@ -36,7 +36,7 @@ class OrderListingPage extends Component {
   render() {
     const { orders, selectedStatus } = this.state;
 
-    // Filter orders based on the selected status
+    
     const filteredOrders = selectedStatus === 'All'
       ? orders
       : orders.filter((order) => order.orderStatus === selectedStatus);
@@ -64,7 +64,7 @@ class OrderListingPage extends Component {
               <th>Order ID</th>
               <th>Customer Name</th>
               <th>Status</th>
-              {/* Add more table headers as needed */}
+          
             </tr>
           </thead>
           <tbody>
@@ -73,7 +73,7 @@ class OrderListingPage extends Component {
                 <td>{order.id}</td>
                 <td>{order.customerName}</td>
                 <td>{order.orderStatus}</td>
-                {/* Add more table data fields as needed */}
+              
               </tr>
             ))}
           </tbody>

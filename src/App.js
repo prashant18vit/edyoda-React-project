@@ -10,11 +10,6 @@ import UserListingPage from './component/UserListingPage';
 function App() {
   return (
     <div className="App">
-      {/* <LoginPage/> */}
-      {/* <OrderListingPage/>
-      <ProductListingPage/>
-      <UserListingPage/> */}
-
       <Router>
         <Routes>
           <Route path="/" element={<LoginPage/>} />

@@ -6,18 +6,18 @@ class ProductListingPage extends Component {
     super(props);
     this.state = {
       products: [],
-      showExpired: false, // Initial filter for expired products
-      showLowStock: false, // Initial filter for low stock products
+      showExpired: false, 
+      showLowStock: false, 
     };
   }
 
   componentDidMount() {
-    // Make an API call to fetch products on page load
+ 
     this.fetchProducts();
   }
 
   fetchProducts() {
-    // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint
+    
     fetch('https://5fc1a1c9cb4d020016fe6b07.mockapi.io/api/v1/products')
       .then((response) => response.json())
       .then((data) => {
@@ -44,7 +44,7 @@ class ProductListingPage extends Component {
   render() {
     const { products, showExpired, showLowStock } = this.state;
 
-    // Filter products based on expiration and stock
+  
     const filteredProducts = products.filter((product) => {
       const isExpired = new Date(product.expiryDate) < new Date();
       const isLowStock = product.stock < 100;
@@ -89,7 +89,7 @@ class ProductListingPage extends Component {
               <th>Product Name</th>
               <th>Expiry Date</th>
               <th>Stock</th>
-              {/* Add more table headers as needed */}
+             
             </tr>
           </thead>
           <tbody>
@@ -99,7 +99,7 @@ class ProductListingPage extends Component {
                 <td>{product.medicineName}</td>
                 <td>{product.expiryDate}</td>
                 <td>{product.stock}</td>
-                {/* Add more table data fields as needed */}
+             
               </tr>
             ))}
           </tbody>

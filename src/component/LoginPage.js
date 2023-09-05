@@ -30,9 +30,6 @@ class LoginPage extends Component {
     const { username, password, loggedIn, errorMessage } = this.state;
 
     if (loggedIn) {
-      // const navigate = useNavigate();
-      // navigate('/orders');
-      // this.props.navigate('/orders')
       alert("Login successfull")
       return <Navigate to="/orders" />;
     }
